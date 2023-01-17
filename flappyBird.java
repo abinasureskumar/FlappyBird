@@ -24,5 +24,13 @@ public class FlappyBird extends Actor
             FallDown = -10;
         }
         FallDown = FallDown + FallSpeed;
+        
+        // when flappyBird at edge, add GameOver text to world
+        GameOver gameover = new GameOver();
+        if (isAtEdge()) {
+            getWorld().addObject(gameover, getWorld().getWidth()/2, getWorld().getHeight()/2);
+            Greenfoot.stop();
+            //System.out.println("GameOver");
+        }
     }
 }
