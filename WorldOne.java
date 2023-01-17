@@ -17,12 +17,12 @@ public class WorldOne extends World
     public WorldOne()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1500, 1000, 1); 
+        super(1500, 850, 1); 
         
         // create Flappy Bird
         FlappyBird flappybird = new FlappyBird();
         // add Flappy Bird to world
-        addObject(flappybird, 100, getHeight()/2);
+        addObject(flappybird, 150, getHeight()/2);
     }
     
     public void act() {
@@ -30,7 +30,8 @@ public class WorldOne extends World
         if (counter == 100) {
             // create new pipe
             Pipe pipe = new Pipe();
-            addObject(pipe, getWidth(), getHeight()/2);
+            GreenfootImage image = pipe.getImage();
+            addObject(pipe, getWidth(), getHeight()/2 + image.getHeight()/2);
             //System.out.println(counter);
             counter = 0;
         }
