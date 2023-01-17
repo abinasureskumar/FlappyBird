@@ -9,8 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class FlappyBird extends Actor
 {
     int FallDown = 0;
-    int FallSpeed = 2;
-    
+    int FallSpeed = 1;
     
     /**
      * Act - do whatever the FlappyBird wants to do. This method is called whenever
@@ -20,9 +19,9 @@ public class FlappyBird extends Actor
     {
         setLocation( getX(), getY() + FallDown );
         
-        // If UP arrow is pressed
+        // If space key is pressed -> bird fly up
         if (Greenfoot.isKeyDown("space") == true) {
-            FallDown = -20;
+            FallDown = -10;
         }
         FallDown = FallDown + FallSpeed;
     }
