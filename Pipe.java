@@ -8,12 +8,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Pipe extends Actor
 {
+    int PipeSpeed = -4;
+    
     /**
      * Act - do whatever the Pipe wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
-        setLocation(getX() -4, getY());
+       setLocation(getX() + PipeSpeed, getY());
     }
 }
