@@ -26,5 +26,15 @@ public class ScoreCounter extends Actor
         newImage.setColor(Color.BLACK);
         newImage.drawString("" + score, 30, 34);
         setImage(newImage);
+        
+        if (score == 20) {
+            //System.out.println("lmao");
+            GreenfootImage img = new GreenfootImage("imgTwo.jpg");
+            //getWorld().setBackground(new GreenfootImage("imgTwo.jpg"));
+            img.scale(getWorld().getWidth(), getWorld().getHeight());
+            getWorld().setBackground(new GreenfootImage(img));
+            
+            
+        }
     }
 }

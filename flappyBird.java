@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
 
 /**
  * Write a description of class FlappyBird here.
@@ -27,10 +28,19 @@ public class FlappyBird extends Actor
         
         // when flappyBird at edge or touched pipe, add GameOver text to world
         GameOver gameover = new GameOver();
-        if (getY() == getWorld().getHeight()-1 || getOneIntersectingObject(Pipe.class)!= null || getOneIntersectingObject(PipeUp.class)!= null) {
+        if (getY() == getWorld().getHeight()-1 || getY() == 0 || getOneIntersectingObject(Pipe.class)!= null || getOneIntersectingObject(PipeUp.class)!= null) {
             getWorld().addObject(gameover, getWorld().getWidth()/2, getWorld().getHeight()/2);
             Greenfoot.stop();
             //System.out.println("GameOver");
+        }
+        
+        // removes the next couple pipes seen in the world when flappybird touches life
+        List<Life> lives = getIntersectingObjects(Life.class);
+        if (!lives.isEmpty()) {
+            for(Life life: lives) {
+                // remove all actors of type Pipe from the world
+                getWorld().removeObjects(getWorld().getObjects(Pipe.class));
+            }
         }
     }
 }

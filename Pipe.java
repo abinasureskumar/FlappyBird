@@ -17,5 +17,17 @@ public class Pipe extends Actor
     public void act()
     {
        setLocation(getX() + PipeSpeed, getY());
+       
+       //if (getOneIntersectingObject(PipeUp.class)!= null) {
+        //System.out.println("GameOver");
+        //PipeUp pipeup = new PipeUp();
+        //GreenfootImage image = pipeup.getImage();
+        //setLocation(getWorld().getWidth(), getWorld().getHeight()/2 + getY()/2);
+        //pipeup.setLocation(getWorld().getWidth(), getWorld().getHeight()/-2 + getY()/3);
+        //}
+        
+        if (getX() == 0) {
+            getWorld().removeObject(this);
+        }
     }
 }
