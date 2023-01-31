@@ -18,7 +18,16 @@ public class Life extends Actor
     {
         setLocation(getX() + PipeSpeed, getY());
         
-        if (getX() == 0 || isTouching(FlappyBird.class)) {
+
+        
+        if (isTouching(FlappyBird.class)) {
+            // removes all visible pipes from the world
+            getWorld().removeObjects(getWorld().getObjects(Pipe.class));
+            getWorld().removeObject(this);
+        }
+        
+        // removes life actor when its at edge
+        if (getX() == 0) {
             getWorld().removeObject(this);
         }
     }

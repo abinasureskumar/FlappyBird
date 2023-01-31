@@ -14,6 +14,7 @@ public class ScoreCounter extends Actor
         setImage(newImage);
     }
     
+    // creats / draws score counter
     public void setScore(int score) {
         GreenfootImage newImage = getImage();
         newImage.clear();
@@ -27,14 +28,11 @@ public class ScoreCounter extends Actor
         newImage.drawString("" + score, 30, 34);
         setImage(newImage);
         
+        // changes background image once score hits 20
         if (score == 20) {
-            //System.out.println("lmao");
             GreenfootImage img = new GreenfootImage("imgTwo.jpg");
-            //getWorld().setBackground(new GreenfootImage("imgTwo.jpg"));
             img.scale(getWorld().getWidth(), getWorld().getHeight());
             getWorld().setBackground(new GreenfootImage(img));
-            
-            
         }
     }
 }

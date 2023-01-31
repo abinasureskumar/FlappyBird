@@ -8,12 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level extends Actor
 {
-    //constructor
+    // constructor
     public Level() {
         GreenfootImage newImage = new GreenfootImage(120, 40);
         setImage(newImage);
     }
     
+    // creats / draws level counter
     public void setLevel(int levelCounter) {
         GreenfootImage newImage = getImage();
         newImage.clear();

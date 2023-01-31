@@ -53,21 +53,19 @@ public class WorldOne extends World
             Pipe pipe = new Pipe();
             GreenfootImage image = pipe.getImage();
             int pipeHeight = image.getHeight() / (Greenfoot.getRandomNumber(5) + 1);
-            ////addObject(pipe, getWidth(), getHeight()/2 + image.getHeight()/ (Greenfoot.getRandomNumber(5) + 1));
             addObject(pipe, getWidth(), getHeight()/2 + pipeHeight);
             
-    
+            // adds life to world
+            if (PipeCounter % 300 == 0 && score < 20) {
+                Life life = new Life();
+                addObject(life, getWidth(), getHeight()/3 - pipeHeight/2 - 50);
+            }
+                
             //create new pipe(up)
             //PipeUp pipeup = new PipeUp();
             //GreenfootImage imageUp = pipeup.getImage();
             //addObject(pipeup, getWidth(), getHeight()/-2 + imageUp.getHeight()/(Greenfoot.getRandomNumber(3) + 1));
             //System.out.println(PipeCounter);
-            
-            // adds life to world
-            if (PipeCounter % 300 == 0) {
-                Life life = new Life();
-                addObject(life, getWidth(), getHeight()/3 - pipeHeight/2 - 50);
-            }
         }
         
         
